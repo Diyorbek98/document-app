@@ -138,6 +138,7 @@ class DocumentForm extends Component {
                     })
 
                 this.onToggle()
+                e.target.reset()
             }
         }
 
