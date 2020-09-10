@@ -1,5 +1,6 @@
 package uz.diyorbek.documentappserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,12 @@ public class DocFile {
     @Id
     private String regId;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Timestamp regDate;
 
     private String sourceDocId;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Timestamp sourceDocDate;
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -32,6 +35,7 @@ public class DocFile {
     private String topic;
     private String description;
 
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Timestamp periodOfExecution;
 
     private boolean access;
